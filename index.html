@@ -428,35 +428,89 @@
           <li><a href="#reservierung">Reservierung</a></li>
         </ul>
       </div>
-      <div>
-        <ul class="footer-nav">
-          <li><a href="#impressum">Impressum</a></li>
-          <li><a href="#datenschutz">Datenschutz</a></li>
-        </ul>
-      </div>
     </div>
     <div class="container">
       <p class="footer-copy">© 2026 Woid‘Kich — bayerisch | modern | regional</p>
     </div>
+
+    <div class="footer-legal">
+      <div class="container footer-legal__toggles">
+        <button
+          type="button"
+          class="footer-legal__toggle"
+          id="footer-legal-toggle-impressum"
+          aria-expanded="false"
+          aria-controls="impressum"
+        >Impressum</button>
+        <button
+          type="button"
+          class="footer-legal__toggle"
+          id="footer-legal-toggle-datenschutz"
+          aria-expanded="false"
+          aria-controls="datenschutz"
+        >Datenschutz</button>
+      </div>
+
+      <div
+        id="impressum"
+        class="footer-legal__panel"
+        role="region"
+        aria-labelledby="footer-legal-toggle-impressum"
+        aria-hidden="true"
+      >
+        <div class="footer-legal__panel-inner" inert>
+          <div class="container footer-legal__content">
+            <h2 class="footer-legal__title">Impressum</h2>
+            <p class="footer-legal__hint">Die folgenden Angaben sind Platzhalter und werden vor Veröffentlichung final ergänzt.</p>
+            <p class="footer-legal__block">
+              <strong>Woid‘Kich</strong><br>
+              Waldstraße 12<br>
+              94256 Frauenau
+            </p>
+            <p class="footer-legal__block">
+              <strong>Kontakt</strong><br>
+              <a href="tel:+499926123456">09926&nbsp;123456</a><br>
+              <a href="mailto:servus@woidkich.de">servus@woidkich.de</a>
+            </p>
+            <p class="footer-legal__block">
+              <strong>Vertreten durch</strong><br>
+              [Vorname Nachname ergänzen]
+            </p>
+            <p class="footer-legal__block">
+              <strong>Umsatzsteuer-ID</strong><br>
+              [falls vorhanden ergänzen]
+            </p>
+            <p class="footer-legal__hint footer-legal__hint--final">Vor dem Livegang rechtlich prüfen und vervollständigen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="datenschutz"
+        class="footer-legal__panel"
+        role="region"
+        aria-labelledby="footer-legal-toggle-datenschutz"
+        aria-hidden="true"
+      >
+        <div class="footer-legal__panel-inner" inert>
+          <div class="container footer-legal__content">
+            <h2 class="footer-legal__title">Datenschutz</h2>
+            <p class="footer-legal__hint">Die folgende Übersicht ist bewusst allgemein gehalten und ersetzt keine rechtsverbindliche Datenschutzerklärung. Bitte vor dem Livegang durch eine Fachperson prüfen und ergänzen lassen.</p>
+            <p class="footer-legal__block">Es sind u. a. folgende Themen zu berücksichtigen und auszuarbeiten:</p>
+            <ul class="footer-legal__list">
+              <li>Hosting der Website (z. B. GitHub Pages) und dabei anfallende technische Daten</li>
+              <li>Server-Logfiles bzw. vergleichbare Zugriffsprotokolle des Hosters</li>
+              <li>Kontaktaufnahme per E-Mail oder Telefon</li>
+              <li>Reservierungsanfragen über das Formular (Zweck, Speicherdauer, Empfänger)</li>
+              <li>OpenStreetMap-Karte: Beim Laden der Karte können Daten an den Kartendienst übertragen werden.</li>
+              <li>Rechte der betroffenen Personen (Auskunft, Löschung, Berichtigung, Widerspruch, Beschwerde bei einer Aufsichtsbehörde)</li>
+            </ul>
+            <p class="footer-legal__hint footer-legal__hint--final">Platzhaltertext — keine abschließenden rechtlichen Aussagen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
-
-  <section id="impressum" class="legal-section" aria-labelledby="impressum-heading">
-    <div class="container">
-      <h2 id="impressum-heading">Impressum</h2>
-      <p class="legal-note">
-        Platzhalter: Hier später Angaben gemäß § 5 TMG / § 55 RStV einfügen (Betreiber, Anschrift, Kontakt, USt-ID falls vorhanden).
-      </p>
-    </div>
-  </section>
-
-  <section id="datenschutz" class="legal-section section--muted" aria-labelledby="datenschutz-heading">
-    <div class="container">
-      <h2 id="datenschutz-heading">Datenschutz</h2>
-      <p class="legal-note">
-        Platzhalter: Hier später eine datenschutzrechtliche Information ergänzen (Verantwortlicher, Zwecke, Speicherdauer, Betroffenenrechte).
-      </p>
-    </div>
-  </section>
 
   <script src="main.js" defer></script>
 </body>

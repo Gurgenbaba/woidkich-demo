@@ -46,6 +46,85 @@
     });
   }
 
+  function wireFooterLegal() {
+    var root = document.querySelector(".footer-legal");
+    if (!root) return;
+
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var panels = {
+      impressum: document.getElementById("impressum"),
+      datenschutz: document.getElementById("datenschutz"),
+    };
+    var toggleBtns = {
+      impressum: document.getElementById("footer-legal-toggle-impressum"),
+      datenschutz: document.getElementById("footer-legal-toggle-datenschutz"),
+    };
+
+    function setInnerInert(panel, on) {
+      var inner = panel && panel.querySelector(".footer-legal__panel-inner");
+      if (!inner) return;
+      if (on) inner.setAttribute("inert", "");
+      else inner.removeAttribute("inert");
+    }
+
+    function closeAll() {
+      ["impressum", "datenschutz"].forEach(function (key) {
+        var p = panels[key];
+        var b = toggleBtns[key];
+        if (!p || !b) return;
+        p.classList.remove("is-open");
+        p.setAttribute("aria-hidden", "true");
+        b.setAttribute("aria-expanded", "false");
+        setInnerInert(p, true);
+      });
+    }
+
+    function openOnly(key) {
+      closeAll();
+      var p = panels[key];
+      var b = toggleBtns[key];
+      if (!p || !b) return;
+      p.classList.add("is-open");
+      p.setAttribute("aria-hidden", "false");
+      b.setAttribute("aria-expanded", "true");
+      setInnerInert(p, false);
+    }
+
+    function toggle(key) {
+      var p = panels[key];
+      if (!p) return;
+      if (p.classList.contains("is-open")) closeAll();
+      else openOnly(key);
+    }
+
+    root.querySelectorAll(".footer-legal__toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var id = btn.getAttribute("aria-controls");
+        if (id === "impressum" || id === "datenschutz") toggle(id);
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      if (!root.querySelector(".footer-legal__panel.is-open")) return;
+      closeAll();
+    });
+
+    var h = location.hash.replace(/^#/, "");
+    if (h === "impressum" || h === "datenschutz") {
+      openOnly(h);
+      window.requestAnimationFrame(function () {
+        var el = document.getElementById(h);
+        if (el) {
+          el.scrollIntoView({
+            behavior: reduceMotion ? "auto" : "smooth",
+            block: "nearest",
+          });
+        }
+      });
+    }
+  }
+
   function wireMapEmbed() {
     var card = document.querySelector(".map-card");
     var iframe = document.querySelector(".map-card__frame iframe.map-card__embed");
@@ -222,6 +301,7 @@
     wireLogo();
     wireWebImages();
     wireMapEmbed();
+    wireFooterLegal();
     wireNav();
     wireForm();
   }
