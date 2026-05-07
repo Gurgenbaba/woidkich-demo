@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Woid‘Kich — bayerisch | modern | regional. Waldstraße 12 – Reservierung &amp; Speisekarte.">
+  <title>Woid‘Kich — bayerisch | modern | regional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-link" href="#start" aria-label="Woid‘Kich — Zur Startseite">
+        <img src="logo.png" alt="" class="logo-img" width="480" height="148" decoding="async" fetchpriority="high">
+        <span class="logo-fallback" hidden>Woid‘Kich</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Menü öffnen">
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav id="main-navigation" class="main-nav" aria-label="Hauptnavigation">
+        <a href="#start">Start</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#speisekarte">Speisekarte</a>
+        <a href="#getraenke">Getränke</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn--primary" href="#reservierung">Tisch reservieren</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="start" class="hero" aria-labelledby="hero-heading">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__eyebrow">Woid‘Kich</h1>
+          <p class="hero__tagline">bayerisch | modern | regional</p>
+          <p class="hero__claim">Genuss aus dem Wald — kräftig, regional und ohne Schnörkel.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="speisekarte.html">Speisekarte ansehen</a>
+            <a class="btn btn--ghost" href="#reservierung">Tisch reservieren</a>
+          </div>
+        </div>
+        <div class="hero__visual" role="img" aria-label="Stimmungsbild: Lokal, Wald und Genuss">
+          <img class="hero__visual-img" src="img/web/hero.webp" alt="" width="1600" height="1067" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 50vw" onerror="this.style.display='none'">
+          <p class="hero__visual-caption">Woid Moments – Genuss, Wald &amp; Gastlichkeit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns" class="section" aria-labelledby="about-heading">
+      <div class="container about__grid">
+        <div class="about__image" role="img" aria-label="Platzhalter Bild Lokal oder Team"></div>
+        <div class="about__content">
+          <h2 id="about-heading" class="section__title">Über uns</h2>
+          <p class="about__subtitle">Aus dem Woid. Für dahoam.</p>
+          <p class="about__text">
+            Ehrliche Küche, regionale Zutaten und eine moderne Interpretation traditioneller Gerichte –
+            das ist Woid‘Kich. Wir kochen, was die Landschaft hergibt, mit Respekt vor Handwerk und Jahreszeit.
+          </p>
+          <div class="values" role="list">
+            <div class="value-card" role="listitem">
+              <strong>Regional</strong>
+              <span>Was nah ist, schmeckt am besten.</span>
+            </div>
+            <div class="value-card" role="listitem">
+              <strong>Ehrlich</strong>
+              <span>Klar auf dem Teller, ohne Schnickschnack.</span>
+            </div>
+            <div class="value-card" role="listitem">
+              <strong>Gmütlich</strong>
+              <span>Wie bei Freunden – nur mit besserem Bier.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="speisekarte" class="section section--muted" aria-labelledby="kitchen-heading">
+      <div class="container">
+        <h2 id="kitchen-heading" class="section__title">Unsere Küche</h2>
+        <p class="section__lead">Kreativ. Regional. Guad.</p>
+        <div class="menu-preview__grid">
+          <article class="card-dish card-dish--featured">
+            <div class="card-dish__img">
+              <img src="img/web/woid-burger.webp" alt="" width="900" height="563" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            </div>
+            <div class="card-dish__body">
+              <h3 class="card-dish__title">Woid‑Burger</h3>
+              <p class="card-dish__desc">Mit regionalem Rindfleisch.</p>
+              <p class="card-dish__price"><span class="price">16,90&nbsp;€</span></p>
+            </div>
+          </article>
+          <article class="card-dish card-dish--featured">
+            <div class="card-dish__img">
+              <img src="img/web/rahmschwammerl.webp" alt="" width="900" height="563" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            </div>
+            <div class="card-dish__body">
+              <h3 class="card-dish__title">Rahmschwammerl</h3>
+              <p class="card-dish__desc">Mit Semmelknödel.</p>
+              <p class="card-dish__price"><span class="price">14,50&nbsp;€</span></p>
+            </div>
+          </article>
+          <article class="card-dish card-dish--featured">
+            <div class="card-dish__img">
+              <img src="img/web/zwiebelrostbraten.webp" alt="" width="900" height="563" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            </div>
+            <div class="card-dish__body">
+              <h3 class="card-dish__title">Zwiebelrostbraten</h3>
+              <p class="card-dish__desc">Saftig, mit Röstzwiebeln.</p>
+              <p class="card-dish__price"><span class="price">21,90&nbsp;€</span></p>
+            </div>
+          </article>
+          <article class="card-dish">
+            <div class="card-dish__img">
+              <img src="img/web/kuerbis-risotto.webp" alt="" width="900" height="563" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            </div>
+            <div class="card-dish__body">
+              <h3 class="card-dish__title">Kürbis‑Risotto</h3>
+              <p class="card-dish__desc">Vegetarisch, mit Kürbiskernöl und Parmesan.</p>
+              <p class="card-dish__price"><span class="price">14,50&nbsp;€</span></p>
+            </div>
+          </article>
+          <article class="card-dish">
+            <div class="card-dish__img">
+              <img src="img/web/brotzeitbrettl.webp" alt="" width="900" height="563" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            </div>
+            <div class="card-dish__body">
+              <h3 class="card-dish__title">Brotzeitbrettl „Regional“</h3>
+              <p class="card-dish__desc">Wurst, Käs, Honig &amp; Obatzda vom Partnerbetrieb.</p>
+              <p class="card-dish__price"><span class="price">16,00&nbsp;€</span></p>
+            </div>
+          </article>
+          <article class="card-dish">
+            <div class="card-dish__img">
+              <img src="img/web/schwarzwaelder.webp" alt="" width="900" height="563" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            </div>
+            <div class="card-dish__body">
+              <h3 class="card-dish__title">Schwarzwälder von daheim</h3>
+              <p class="card-dish__desc">Hausgemacht, nicht zu süß – wie’s sich gehört.</p>
+              <p class="card-dish__price"><span class="price">7,50&nbsp;€</span></p>
+            </div>
+          </article>
+        </div>
+        <div class="section__footer-cta">
+          <a class="btn btn--primary" href="speisekarte.html">Zur kompletten Speisekarte</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="getraenke" class="section getraenke-teaser" aria-labelledby="getraenke-heading">
+      <div class="container">
+        <h2 id="getraenke-heading" class="section__title">Getränke</h2>
+        <p class="section__lead">
+          Aus der Region: Helles und Dunkles vom Fass, offene Weine und Erfrischungen – alles in der Übersicht.
+        </p>
+        <div class="getraenke-strip" role="group" aria-label="Getränke in Bildern">
+          <figure class="getraenke-strip__item">
+            <img src="img/web/getraenk-1.webp" alt="" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </figure>
+          <figure class="getraenke-strip__item">
+            <img src="img/web/getraenk-2.webp" alt="" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </figure>
+          <figure class="getraenke-strip__item">
+            <img src="img/web/getraenk-3.webp" alt="" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </figure>
+        </div>
+        <a class="btn btn--primary" href="speisekarte.html#getraenke">Zur Getränkekarte</a>
+      </div>
+    </section>
+
+    <section id="partner" class="section" aria-labelledby="partner-heading">
+      <div class="container">
+        <h2 id="partner-heading" class="section__title">Unsere Partner aus der Region</h2>
+        <p class="section__lead">Qualität entsteht gemeinsam – mit Betrieben aus der Nachbarschaft.</p>
+        <div class="partner-grid">
+          <div class="partner-item">Brauerei <small>Logo / Name Platzhalter</small></div>
+          <div class="partner-item">Bäckerei <small>Logo / Name Platzhalter</small></div>
+          <div class="partner-item">Metzgerei <small>Logo / Name Platzhalter</small></div>
+          <div class="partner-item">Gemüsehändler <small>Logo / Name Platzhalter</small></div>
+          <div class="partner-item">Bauernhof <small>Logo / Name Platzhalter</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" class="section section--muted" aria-labelledby="gallery-heading">
+      <div class="container">
+        <h2 id="gallery-heading" class="section__title">Woid Moments</h2>
+        <p class="section__lead">Eindrücke vom Wald, dem Lokal und kleinen Genussmomenten.</p>
+        <div class="gallery-strip" role="list">
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-1.webp" alt="Impression 1" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-2.webp" alt="Impression 2" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-3.webp" alt="Impression 3" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-4.webp" alt="Impression 4" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-5.webp" alt="Impression 5" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-6.webp" alt="Impression 6" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+          <div class="gallery-item" role="listitem">
+            <img src="img/web/gallery-7.webp" alt="Impression 7" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          </div>
+        </div>
+        <p class="gallery-cta">
+          <a class="btn btn--ghost" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Folge uns auf Instagram</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="kontakt" class="section" aria-labelledby="contact-heading">
+      <div class="container contact__grid">
+        <div>
+          <h2 id="contact-heading" class="section__title">Kontakt &amp; Öffnungszeiten</h2>
+          <ul class="contact-list">
+            <li>
+              <strong>Adresse</strong><br>
+              Waldstraße 12<br>
+              <span class="contact-placeholder" aria-label="PLZ und Ort folgen">PLZ / Ort — Platzhalter, wird noch ergänzt</span>
+            </li>
+            <li>
+              <strong>Telefon</strong>
+              <span class="placeholder-badge" title="Noch nicht final">Platzhalter</span><br>
+              <a href="tel:+498912345678" class="contact-link-muted">+49 89 123 456 78</a>
+            </li>
+            <li>
+              <strong>E‑Mail</strong>
+              <span class="placeholder-badge" title="Noch nicht final">Platzhalter</span><br>
+              <a href="mailto:hallo@woidkich.de" class="contact-link-muted">hallo@woidkich.de</a>
+            </li>
+          </ul>
+          <div class="hours">
+            <h3 class="hours__title">Öffnungszeiten</h3>
+            <dl>
+              <dt>Mo–Do</dt>
+              <dd>11:30–14:30 &amp; 17:30–22:00</dd>
+              <dt>Fr–Sa</dt>
+              <dd>11:30–23:00</dd>
+              <dt>So</dt>
+              <dd>Ruhetag</dd>
+            </dl>
+          </div>
+          <a class="btn btn--primary" href="#reservierung">Zur Reservierung</a>
+        </div>
+        <div>
+          <div class="map-placeholder" role="img" aria-label="Karten-Platzhalter">
+            Karte: später Google Maps oder OpenStreetMap einbinden
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservierung" class="section section--muted" aria-labelledby="reserve-heading">
+      <div class="container">
+        <h2 id="reserve-heading" class="section__title">Tisch reservieren</h2>
+        <p class="section__lead">Schick uns deine Anfrage – wir melden uns so bald wie möglich.</p>
+        <div class="form-card">
+          <div id="reserve-message" class="form-message" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          <form id="reservation-form" class="form-grid" novalidate>
+            <div class="field">
+              <label for="reserve-name">Name *</label>
+              <input type="text" name="name" id="reserve-name" autocomplete="name" required maxlength="120" aria-required="true">
+              <span class="field-error">Bitte gib deinen Namen an.</span>
+            </div>
+            <div class="form-row--2">
+              <div class="field">
+                <label for="reserve-email">E‑Mail *</label>
+                <input type="email" name="email" id="reserve-email" autocomplete="email" required maxlength="120" aria-required="true">
+                <span class="field-error">Bitte gib eine gültige E‑Mail-Adresse an.</span>
+              </div>
+              <div class="field">
+                <label for="reserve-phone">Telefon *</label>
+                <input type="tel" name="phone" id="reserve-phone" autocomplete="tel" required maxlength="40" aria-required="true">
+                <span class="field-error">Bitte gib eine Telefonnummer an.</span>
+              </div>
+            </div>
+            <div class="form-row--2">
+              <div class="field">
+                <label for="reserve-date">Datum *</label>
+                <input type="date" name="date" id="reserve-date" required aria-required="true">
+                <span class="field-error">Bitte wähle ein Datum.</span>
+              </div>
+              <div class="field">
+                <label for="reserve-time">Uhrzeit *</label>
+                <input type="time" name="time" id="reserve-time" required aria-required="true">
+                <span class="field-error">Bitte wähle eine Uhrzeit.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="reserve-guests">Personenanzahl *</label>
+              <select name="guests" id="reserve-guests" required aria-required="true">
+                <option value="">Bitte wählen …</option>
+                <option value="1">1 Person</option>
+                <option value="2">2 Personen</option>
+                <option value="3">3 Personen</option>
+                <option value="4">4 Personen</option>
+                <option value="5">5 Personen</option>
+                <option value="6">6 Personen</option>
+                <option value="7+">7 oder mehr</option>
+              </select>
+              <span class="field-error">Bitte wähle die Personenanzahl.</span>
+            </div>
+            <div class="field">
+              <label for="reserve-message-field">Nachricht <span class="label-optional">(optional)</span></label>
+              <textarea name="message" id="reserve-message-field" maxlength="800" placeholder="Allergien, Anlass, Kinderhochstuhl …"></textarea>
+              <span class="field-error" aria-hidden="true"></span>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Anfrage senden</button>
+            </div>
+          </form>
+          <p class="form-hint">*Demo – kann später mit E-Mail oder WhatsApp verbunden werden</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Woid‘Kich</p>
+        <p class="footer-tagline">bayerisch | modern | regional</p>
+      </div>
+      <div>
+        <ul class="footer-nav">
+          <li><a href="#start">Start</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#speisekarte">Speisekarte</a></li>
+          <li><a href="#getraenke">Getränke</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#reservierung">Reservierung</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="footer-nav">
+          <li><a href="#impressum">Impressum</a></li>
+          <li><a href="#datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <p class="footer-copy">© 2026 Woid‘Kich — bayerisch | modern | regional</p>
+    </div>
+  </footer>
+
+  <section id="impressum" class="legal-section" aria-labelledby="impressum-heading">
+    <div class="container">
+      <h2 id="impressum-heading">Impressum</h2>
+      <p class="legal-note">
+        Platzhalter: Hier später Angaben gemäß § 5 TMG / § 55 RStV einfügen (Betreiber, Anschrift, Kontakt, USt-ID falls vorhanden).
+      </p>
+    </div>
+  </section>
+
+  <section id="datenschutz" class="legal-section section--muted" aria-labelledby="datenschutz-heading">
+    <div class="container">
+      <h2 id="datenschutz-heading">Datenschutz</h2>
+      <p class="legal-note">
+        Platzhalter: Hier später eine datenschutzrechtliche Information ergänzen (Verantwortlicher, Zwecke, Speicherdauer, Betroffenenrechte).
+      </p>
+    </div>
+  </section>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
