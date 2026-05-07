@@ -1,0 +1,176 @@
+{
+  "categories": [
+    {
+      "id": "vorspeisen",
+      "title": "Vorspeisen",
+      "items": [
+        {
+          "name": "Kürbissuppe mit Kernöl",
+          "description": "Samtzart, mit Kernöl und gerösteten Kernen aus der Region.",
+          "price": "6,90 €"
+        },
+        {
+          "name": "Brettljausn klein",
+          "description": "Feine Aufschnitte, gereifter Käse, Gurkerl — dazu frische Brezn.",
+          "price": "9,50 €"
+        },
+        {
+          "name": "Rettich-Carpaccio",
+          "description": "Fein gehobelt, mit Kräuter-Vinaigrette und gehobeltem Parmesan.",
+          "price": "8,20 €"
+        }
+      ]
+    },
+    {
+      "id": "hauptgerichte",
+      "title": "Hauptgerichte",
+      "lead": "Unsere Gäste- und Team-Favoriten: Woid-Burger, Rahmschwammerl und Zwiebelrostbraten.",
+      "items": [
+        {
+          "name": "Woid-Burger",
+          "description": "Saftiges Rind aus der Region, Brioche, saisonales Gemüse.",
+          "price": "16,90 €",
+          "image": "img/web/woid-burger.webp",
+          "featured": true,
+          "tags": ["Favorit"]
+        },
+        {
+          "name": "Rahmschwammerl",
+          "description": "Waldpilze in feiner Rahmsoße, dazu lockerer Semmelknödel.",
+          "price": "14,50 €",
+          "image": "img/web/rahmschwammerl.webp",
+          "featured": true,
+          "tags": ["Favorit"]
+        },
+        {
+          "name": "Zwiebelrostbraten",
+          "description": "Zartes Rind, goldene Röstzwiebeln, kräftige Soße.",
+          "price": "21,90 €",
+          "image": "img/web/zwiebelrostbraten.webp",
+          "featured": true,
+          "tags": ["Favorit"]
+        },
+        {
+          "name": "Kräuterforelle aus dem Ofen",
+          "description": "Buttrig aus dem Ofen, mit Erdäpfel-Stampf und Marktgemüse.",
+          "price": "19,50 €",
+          "image": "img/web/krauterforelle-aus-dem-ofen.webp"
+        },
+        {
+          "name": "Schweinsbraten „Woid-Art“",
+          "description": "Krosse Kruste, Dunkelbier-Jus, hausgemachtes Kraut.",
+          "price": "18,90 €",
+          "image": "img/web/schweinsbraten-woid-art.webp"
+        },
+        {
+          "name": "Hirschragout",
+          "description": "Langsam geschmort, mit Waldpilzen und Petersilien-Knödel.",
+          "price": "22,50 €",
+          "image": "img/web/hirschragout.webp"
+        },
+        {
+          "name": "Kürbis-Risotto",
+          "description": "Cremig-würzig, vegetarisch, mit Parmesan und steirischem Kernöl.",
+          "price": "14,50 €",
+          "image": "img/web/kurbis-risotto.webp"
+        }
+      ]
+    },
+    {
+      "id": "brotzeit",
+      "title": "Brotzeit",
+      "items": [
+        {
+          "name": "Obatzda & Radi",
+          "description": "Cremig-würzig, hausgemacht, mit Zwiebel und frischem Schnittlauch.",
+          "price": "7,50 €",
+          "image": "img/web/obatzda-und-radi.webp"
+        },
+        {
+          "name": "Leberkäs mit Kartoffelsalat",
+          "description": "Knusprig warm vom Blech, dazu unser hausgemachter Kartoffelsalat.",
+          "price": "11,90 €",
+          "image": "img/web/leberkas-mit-kartoffelsalat.webp"
+        },
+        {
+          "name": "Brotzeitbrettl „Regional“",
+          "description": "Ausgewählte Wurst- und Käsesorten, Honig und mehr — von Partnern aus der Nachbarschaft.",
+          "price": "16,00 €",
+          "image": "img/web/brotzeitbrettl-regional.webp"
+        }
+      ]
+    },
+    {
+      "id": "suesses",
+      "title": "Süßes",
+      "items": [
+        {
+          "name": "Kaiserschmarrn",
+          "description": "Luftig-fluffig, mit hausgemachtem Zwetschgenröster und Staubzucker.",
+          "price": "8,90 €",
+          "image": "img/web/kaiserschmarrn.webp"
+        },
+        {
+          "name": "Schwarzwälder von daheim",
+          "description": "Hausgemacht, mit Kirschen und leichter Sahne — ausgewogen, nicht zu süß.",
+          "price": "7,50 €",
+          "image": "img/web/schwarzwalder.webp"
+        },
+        {
+          "name": "Bayerische Crème",
+          "description": "Vanille, Waldbeeren, zarte Minze — ein feiner Abschluss.",
+          "price": "6,80 €",
+          "image": "img/web/bayerische-creme.webp"
+        }
+      ]
+    },
+    {
+      "id": "getraenke",
+      "title": "Getränke",
+      "intro": "Ob Schankbier vom Fass, ein Glas offener Wein oder eine klare Erfrischung — unsere Auswahl soll zur Küche passen und den Durst stillen, ohne Schnickschnack.",
+      "stripImages": [
+        "img/web/helles-vom-fass.webp",
+        "img/web/dunkles.webp",
+        "img/web/radler.webp"
+      ],
+      "items": [
+        {
+          "name": "Helles vom Fass",
+          "description": "Frisch gezapft, malzig-herb — 0,5 l",
+          "price": "4,20 €",
+          "image": "img/web/helles-vom-fass.webp"
+        },
+        {
+          "name": "Dunkles",
+          "description": "Kräftig, rund, mit feiner Röstnote — 0,5 l",
+          "price": "4,40 €",
+          "image": "img/web/dunkles.webp"
+        },
+        {
+          "name": "Radler",
+          "description": "Erfrischend, hausgemischt — 0,5 l",
+          "price": "4,50 €",
+          "image": "img/web/radler.webp"
+        },
+        {
+          "name": "Offener Wein",
+          "description": "Täglich wechselnde Auswahl — Weiß, Rosé oder Rot, 0,2 l",
+          "price": "ab 4,80 €",
+          "image": "img/web/offener-wein.webp"
+        },
+        {
+          "name": "Apfelschorle",
+          "description": "Apfel direkt gepresst, fein perlend — 0,4 l",
+          "price": "3,90 €",
+          "image": "img/web/apfelschorle.webp"
+        },
+        {
+          "name": "Leitungswasser",
+          "description": "Auf Wunsch servieren wir frisches Tafelwasser zu jeder Mahlzeit.",
+          "price": "0,00 €",
+          "image": "img/web/leitungswasser.webp"
+        }
+      ]
+    }
+  ]
+}

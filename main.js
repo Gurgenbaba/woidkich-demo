@@ -125,6 +125,152 @@
     }
   }
 
+  function buildMenuRow(item) {
+    var row = document.createElement("div");
+    row.className = "menu-row";
+    var imgPath = item.image && String(item.image).trim();
+    if (imgPath) row.classList.add("menu-row--thumb");
+    if (item.featured === true) row.classList.add("menu-row--featured");
+
+    if (imgPath) {
+      var thumb = document.createElement("div");
+      thumb.className = "menu-row__thumb";
+      var img = document.createElement("img");
+      img.src = imgPath;
+      img.alt = "";
+      img.width = 180;
+      img.height = 180;
+      img.loading = "lazy";
+      img.decoding = "async";
+      thumb.appendChild(img);
+      row.appendChild(thumb);
+    }
+
+    var info = document.createElement("div");
+    info.className = "menu-row__info";
+    var h3 = document.createElement("h3");
+    h3.textContent = item.name != null ? String(item.name) : "";
+    info.appendChild(h3);
+
+    if (Array.isArray(item.tags) && item.tags.length) {
+      var tagsWrap = document.createElement("div");
+      tagsWrap.className = "menu-row__tags";
+      item.tags.forEach(function (tag) {
+        var pill = document.createElement("span");
+        pill.className = "menu-row__tag";
+        pill.textContent = String(tag);
+        tagsWrap.appendChild(pill);
+      });
+      info.appendChild(tagsWrap);
+    }
+
+    if (item.description != null && String(item.description).trim() !== "") {
+      var desc = document.createElement("p");
+      desc.textContent = String(item.description);
+      info.appendChild(desc);
+    }
+    row.appendChild(info);
+
+    var priceEl = document.createElement("div");
+    priceEl.className = "menu-row__price";
+    priceEl.textContent = item.price != null ? String(item.price) : "";
+    row.appendChild(priceEl);
+
+    return row;
+  }
+
+  function buildCategorySection(cat) {
+    var sec = document.createElement("section");
+    var id = cat.id != null ? String(cat.id).trim() : "";
+    if (id) sec.id = id;
+    sec.className = "menu-category";
+
+    var inner = document.createElement("div");
+    inner.className = "container";
+
+    var h2 = document.createElement("h2");
+    h2.textContent = cat.title != null ? String(cat.title) : "";
+    inner.appendChild(h2);
+
+    if (cat.lead != null && String(cat.lead).trim() !== "") {
+      var lead = document.createElement("p");
+      lead.className = "menu-category__featured-lead";
+      lead.textContent = String(cat.lead);
+      inner.appendChild(lead);
+    }
+
+    if (cat.intro != null && String(cat.intro).trim() !== "") {
+      var intro = document.createElement("p");
+      intro.className = "menu-category__intro";
+      intro.textContent = String(cat.intro);
+      inner.appendChild(intro);
+    }
+
+    if (Array.isArray(cat.stripImages) && cat.stripImages.length > 0) {
+      var strip = document.createElement("div");
+      strip.className = "getraenke-strip getraenke-strip--page";
+      strip.setAttribute("role", "group");
+      strip.setAttribute("aria-label", "Getränke in Bildern");
+      cat.stripImages.forEach(function (src) {
+        if (!src || String(src).trim() === "") return;
+        var fig = document.createElement("figure");
+        fig.className = "getraenke-strip__item";
+        var img = document.createElement("img");
+        img.src = String(src).trim();
+        img.alt = "";
+        img.width = 560;
+        img.height = 560;
+        img.loading = "lazy";
+        img.decoding = "async";
+        fig.appendChild(img);
+        strip.appendChild(fig);
+      });
+      inner.appendChild(strip);
+    }
+
+    var itemsWrap = document.createElement("div");
+    itemsWrap.className = "menu-items";
+    if (Array.isArray(cat.items)) {
+      cat.items.forEach(function (item) {
+        itemsWrap.appendChild(buildMenuRow(item));
+      });
+    }
+    inner.appendChild(itemsWrap);
+    sec.appendChild(inner);
+    return sec;
+  }
+
+  function renderMenuPage() {
+    var root = document.getElementById("menu-root");
+    if (!root) return null;
+
+    root.setAttribute("aria-busy", "true");
+
+    return fetch("data/menu.json", { credentials: "same-origin" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("menu fetch failed");
+        return res.json();
+      })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.categories)) throw new Error("invalid menu json");
+        root.replaceChildren();
+        data.categories.forEach(function (cat) {
+          root.appendChild(buildCategorySection(cat));
+        });
+      })
+      .catch(function () {
+        root.replaceChildren();
+        var err = document.createElement("p");
+        err.className = "menu-page-error";
+        err.setAttribute("role", "status");
+        err.textContent = "Die Speisekarte konnte gerade nicht geladen werden.";
+        root.appendChild(err);
+      })
+      .finally(function () {
+        root.removeAttribute("aria-busy");
+      });
+  }
+
   function wireMapEmbed() {
     var card = document.querySelector(".map-card");
     var iframe = document.querySelector(".map-card__frame iframe.map-card__embed");
@@ -299,7 +445,14 @@
 
   function init() {
     wireLogo();
-    wireWebImages();
+    var menuPromise = renderMenuPage();
+    if (menuPromise && typeof menuPromise.finally === "function") {
+      menuPromise.finally(function () {
+        wireWebImages();
+      });
+    } else {
+      wireWebImages();
+    }
     wireMapEmbed();
     wireFooterLegal();
     wireNav();
