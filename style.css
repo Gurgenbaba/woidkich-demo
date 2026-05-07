@@ -84,6 +84,13 @@ body {
   gap: 1.1rem;
 }
 
+body.page--home {
+  background-color: #e2ddd4;
+  background-image:
+    radial-gradient(ellipse 82% 50% at 100% 0%, rgba(198, 161, 54, 0.075), transparent 52%),
+    linear-gradient(178deg, #ebe8e0 0%, #e3ded4 38%, #dbd5c9 100%);
+}
+
 @media (max-width: 480px) {
   body {
     font-size: 0.98rem;
@@ -2258,6 +2265,7 @@ a:hover {
   .btn--ghost:hover,
   .btn--cinema-solid:hover,
   .btn--cinema-outline:hover,
+  .btn--reserve-header:hover,
   .card-dish:hover,
   .value-card:hover,
   .partner-item:hover,
@@ -2303,14 +2311,18 @@ a:hover {
 
 .logo-link--badge {
   flex: 0 0 auto;
-  width: clamp(3.5rem, 12vw, 4.75rem);
-  height: clamp(3.5rem, 12vw, 4.75rem);
+  width: clamp(3.65rem, 12.5vw, 5rem);
+  height: clamp(3.65rem, 12.5vw, 5rem);
   min-height: 0;
-  padding: 0.35rem;
+  padding: 0.42rem;
   border-radius: 50%;
-  border: 2px solid rgba(198, 161, 54, 0.65);
-  background: rgba(0, 0, 0, 0.22);
+  border: 2px solid rgba(228, 196, 86, 0.95);
+  background: linear-gradient(155deg, rgba(255, 253, 248, 0.98), rgba(236, 226, 204, 0.96));
   justify-content: center;
+  box-shadow:
+    0 0 0 1px rgba(31, 61, 43, 0.1),
+    0 8px 28px rgba(0, 0, 0, 0.45),
+    0 0 36px rgba(228, 196, 86, 0.42);
 }
 
 .logo-link--badge .logo-img {
@@ -2320,6 +2332,7 @@ a:hover {
   object-fit: contain;
   object-position: center;
   box-shadow: none;
+  filter: brightness(1.08) contrast(1.06) saturate(1.04);
 }
 
 .main-nav--caps a {
@@ -2365,12 +2378,17 @@ a:hover {
   background: transparent;
   color: rgba(255, 255, 255, 0.95);
   border: 2px solid rgba(198, 161, 54, 0.75);
-  box-shadow: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.55rem 1rem;
   min-height: 2.5rem;
+  transition:
+    background 0.24s var(--ease-out),
+    border-color 0.24s var(--ease-out),
+    box-shadow 0.24s var(--ease-out),
+    transform 0.24s var(--ease-out);
 }
 
 .btn--reserve-header:hover {
@@ -2378,7 +2396,16 @@ a:hover {
   color: var(--color-white);
   border-color: var(--color-gold-bright);
   text-decoration: none;
-  box-shadow: 0 0 0 1px rgba(228, 196, 86, 0.25);
+  box-shadow:
+    0 6px 26px rgba(0, 0, 0, 0.32),
+    0 0 22px rgba(228, 196, 86, 0.18),
+    0 0 0 1px rgba(228, 196, 86, 0.32);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn--reserve-header:hover {
+    transform: translateY(-1px);
+  }
 }
 
 @media (max-width: 900px) {
@@ -2401,6 +2428,7 @@ a:hover {
   background: var(--color-night);
   color: rgba(255, 255, 255, 0.92);
   overflow: clip;
+  box-shadow: inset 0 -90px 110px -30px rgba(0, 0, 0, 0.38);
 }
 
 .hero.hero--cinema::before,
@@ -2414,10 +2442,11 @@ a:hover {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 95% 70% at 78% 8%, rgba(228, 196, 86, 0.22), transparent 52%),
-    radial-gradient(ellipse 55% 85% at 52% 0%, rgba(255, 250, 235, 0.06), transparent 42%),
-    radial-gradient(ellipse 85% 55% at 12% 88%, rgba(45, 107, 74, 0.42), transparent 52%),
-    radial-gradient(ellipse 120% 90% at 50% 100%, rgba(0, 0, 0, 0.55), transparent 58%),
+    radial-gradient(ellipse 95% 70% at 78% 8%, rgba(228, 196, 86, 0.24), transparent 52%),
+    radial-gradient(ellipse 62% 92% at 48% 0%, rgba(255, 248, 230, 0.07), transparent 44%),
+    radial-gradient(ellipse 72% 48% at 16% 92%, rgba(0, 0, 0, 0.48), transparent 58%),
+    radial-gradient(ellipse 85% 55% at 12% 88%, rgba(45, 107, 74, 0.44), transparent 52%),
+    radial-gradient(ellipse 120% 90% at 50% 100%, rgba(0, 0, 0, 0.58), transparent 58%),
     linear-gradient(165deg, #030806 0%, var(--color-night) 34%, var(--color-night-mid) 68%, #07140f 100%);
   opacity: 1;
 }
@@ -2426,10 +2455,11 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.35;
+  opacity: 0.48;
   background:
-    radial-gradient(ellipse 50% 95% at 88% -5%, rgba(228, 196, 86, 0.12), transparent 48%),
-    radial-gradient(ellipse 38% 80% at 62% -8%, rgba(255, 255, 255, 0.04), transparent 45%);
+    radial-gradient(ellipse 115% 52% at 50% 100%, rgba(210, 218, 208, 0.11), transparent 54%),
+    radial-gradient(ellipse 58% 100% at 86% -8%, rgba(228, 196, 86, 0.14), transparent 46%),
+    radial-gradient(ellipse 42% 85% at 58% -6%, rgba(255, 255, 255, 0.05), transparent 44%);
 }
 
 .hero__forest::after {
@@ -2483,8 +2513,8 @@ a:hover {
   font-family: var(--font-sans);
   font-weight: 800;
   font-size: clamp(2rem, 5.2vw, 3.35rem);
-  line-height: 1.05;
-  letter-spacing: 0.02em;
+  line-height: 1.04;
+  letter-spacing: 0.018em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.99);
 }
@@ -2493,7 +2523,15 @@ a:hover {
   display: block;
 }
 
+.hero__display-line:first-child {
+  letter-spacing: 0.03em;
+}
+
 .hero__display-line--gold {
+  margin-top: 0.04em;
+  font-size: 0.9em;
+  letter-spacing: 0.045em;
+  line-height: 1.08;
   background: linear-gradient(92deg, var(--color-gold-bright), #fff6d0 42%, var(--color-gold) 88%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -2520,19 +2558,26 @@ a:hover {
   font-size: 0.76rem;
   padding: 0.68rem 1.2rem;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.12) inset,
-    0 10px 28px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(198, 161, 54, 0.35);
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 2px 0 rgba(0, 0, 0, 0.12) inset,
+    0 12px 32px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(198, 161, 54, 0.38);
+  transition:
+    background 0.26s var(--ease-out),
+    box-shadow 0.26s var(--ease-out),
+    transform 0.26s var(--ease-out),
+    border-color 0.26s var(--ease-out);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .btn--cinema-solid:hover {
     transform: translateY(-2px);
     box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.16) inset,
-      0 14px 36px rgba(0, 0, 0, 0.38),
-      0 0 28px rgba(228, 196, 86, 0.22),
-      0 0 0 1px rgba(228, 196, 86, 0.5);
+      0 1px 0 rgba(255, 255, 255, 0.18) inset,
+      0 2px 0 rgba(0, 0, 0, 0.1) inset,
+      0 18px 44px rgba(0, 0, 0, 0.42),
+      0 0 34px rgba(228, 196, 86, 0.24),
+      0 0 0 1px rgba(228, 196, 86, 0.55);
   }
 }
 
@@ -2551,25 +2596,28 @@ a:hover {
   text-decoration: none;
   border-radius: var(--radius-md);
   color: rgba(255, 255, 255, 0.95);
-  background: rgba(255, 255, 255, 0.035);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.12));
   border: 2px solid rgba(198, 161, 54, 0.78);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 8px 26px rgba(0, 0, 0, 0.28);
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    background 0.26s var(--ease-out),
+    border-color 0.26s var(--ease-out),
+    color 0.26s var(--ease-out),
+    box-shadow 0.26s var(--ease-out),
+    transform 0.26s var(--ease-out);
 }
 
 .btn--cinema-outline:hover {
-  background: rgba(198, 161, 54, 0.14);
+  background: rgba(198, 161, 54, 0.16);
   border-color: var(--color-gold-bright);
   color: var(--color-white);
   text-decoration: none;
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.28),
-    0 0 24px rgba(228, 196, 86, 0.18);
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 14px 38px rgba(0, 0, 0, 0.34),
+    0 0 30px rgba(228, 196, 86, 0.2);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2631,8 +2679,8 @@ a:hover {
 
 @media (min-width: 769px) {
   .hero__shot {
-    margin-right: clamp(-0.5rem, -2.5vw, -2.25rem);
-    margin-left: clamp(0rem, 1vw, 0.5rem);
+    margin-right: clamp(-0.85rem, -3.6vw, -3.35rem);
+    margin-left: clamp(0rem, 1.2vw, 0.65rem);
   }
 }
 
@@ -2640,25 +2688,26 @@ a:hover {
   width: 100%;
   max-width: none;
   border-radius: 1.15rem 0.35rem 1.15rem 0.45rem;
-  border: 1px solid rgba(228, 196, 86, 0.45);
+  border: 1px solid rgba(228, 196, 86, 0.48);
   aspect-ratio: auto;
-  min-height: clamp(20rem, 56vh, 38rem);
+  min-height: clamp(22rem, 60vh, 42rem);
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.35),
-    0 28px 64px rgba(0, 0, 0, 0.55),
-    0 0 80px rgba(228, 196, 86, 0.08);
+    0 0 0 1px rgba(0, 0, 0, 0.38),
+    0 32px 72px rgba(0, 0, 0, 0.58),
+    0 0 96px rgba(228, 196, 86, 0.1);
 }
 
 .hero__visual.hero__visual--cinema .hero__visual-img {
-  object-position: 48% 38%;
-  transform: scale(1.06);
+  object-position: 43% 34%;
+  transform: scale(1.12);
 }
 
 .hero__visual.hero__visual--cinema::after {
   background:
-    radial-gradient(ellipse 90% 70% at 50% 108%, rgba(0, 0, 0, 0.55), transparent 52%),
-    radial-gradient(circle at 38% 22%, rgba(255, 255, 255, 0.14), transparent 46%),
-    radial-gradient(circle at 88% 12%, rgba(228, 196, 86, 0.12), transparent 38%);
+    radial-gradient(ellipse 88% 78% at 50% 108%, rgba(0, 0, 0, 0.62), transparent 54%),
+    radial-gradient(circle at 36% 22%, rgba(255, 255, 255, 0.16), transparent 42%),
+    radial-gradient(circle at 88% 10%, rgba(228, 196, 86, 0.13), transparent 36%),
+    radial-gradient(ellipse 140% 120% at 50% 45%, transparent 32%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 .hero__edge {
@@ -2674,6 +2723,10 @@ a:hover {
   display: block;
   width: 100%;
   height: clamp(36px, 6vw, 52px);
+}
+
+.hero.hero--cinema .hero__edge {
+  color: #aeb8ae;
 }
 
 /* Willkommen + Säulen-Karten */
@@ -2838,7 +2891,81 @@ a:hover {
   }
 
   .hero__visual.hero__visual--cinema .hero__visual-img {
-    transform: scale(1.03);
-    object-position: 50% 40%;
+    transform: scale(1.07);
+    object-position: 48% 36%;
   }
+
+  .hero__display-line--gold {
+    font-size: 0.78em;
+    letter-spacing: 0.032em;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero__display-line--gold {
+    font-size: 0.72em;
+    letter-spacing: 0.028em;
+  }
+}
+
+/* ═══ Startseite: Final polish — Brand-Flow & Editorial ═══ */
+.page--home .welcome {
+  background:
+    linear-gradient(180deg, #9faa9e 0%, #b9c2b4 7%, #d0d6cc 18%, #e2e4dc 40%, #eae8df 100%);
+  border-top: 1px solid rgba(31, 61, 43, 0.05);
+}
+
+.page--home .section--muted:not(.section--dark-gallery) {
+  background:
+    linear-gradient(180deg, rgba(188, 198, 182, 0.42) 0%, rgba(228, 230, 222, 0.97) 22%, rgba(216, 224, 208, 0.92) 100%),
+    radial-gradient(ellipse 90% 48% at 50% 0%, rgba(255, 255, 255, 0.28), transparent 65%);
+}
+
+.page--home #partner.section {
+  background: linear-gradient(180deg, rgba(225, 222, 214, 0.88) 0%, rgba(236, 234, 228, 0.4) 55%, transparent 100%);
+}
+
+.page--home .getraenke-teaser {
+  background: linear-gradient(132deg, rgba(248, 246, 240, 0.98), rgba(212, 222, 200, 0.9));
+  border-block: 2px solid rgba(198, 161, 54, 0.26);
+}
+
+.page--home .catering {
+  background: linear-gradient(180deg, rgba(234, 232, 224, 0.98) 0%, rgba(208, 218, 198, 0.82) 100%);
+}
+
+.page--home .catering__visual {
+  border-color: rgba(31, 61, 43, 0.12);
+  box-shadow:
+    0 4px 20px rgba(31, 61, 43, 0.09),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.page--home .partner-item {
+  background: linear-gradient(180deg, #fdfcfa, #ebe8e0);
+  border: 1px solid rgba(31, 61, 43, 0.11);
+  border-style: solid;
+  box-shadow: 0 5px 18px rgba(31, 61, 43, 0.06);
+}
+
+.page--home .section--contact {
+  background: linear-gradient(180deg, rgba(200, 210, 196, 0.4) 0%, rgba(255, 255, 255, 0.28) 50%, transparent 85%);
+}
+
+.page--home .contact-card {
+  border-color: rgba(31, 61, 43, 0.11);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 5px 22px rgba(31, 61, 43, 0.07),
+    0 16px 44px rgba(15, 36, 24, 0.08);
+}
+
+.page--home .card-dish__img img {
+  transform: scale(1.04);
+  object-position: 50% 30%;
+}
+
+.page--home .pillar-card__visual img {
+  transform: scale(1.03);
+  object-position: center 36%;
 }
