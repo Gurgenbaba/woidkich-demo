@@ -7,7 +7,7 @@
   <title>Woid‘Kich — bayerisch | modern | regional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,6 +27,7 @@
         <a href="#ueber-uns">Über uns</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
+        <a href="#catering">Catering</a>
         <a href="#galerie">Galerie</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -41,8 +42,8 @@
       <div class="container hero__grid">
         <div class="hero__content">
           <h1 id="hero-heading" class="hero__eyebrow">Woid‘Kich</h1>
-          <p class="hero__tagline">bayerisch | modern | regional</p>
-          <p class="hero__claim">Genuss aus dem Wald — kräftig, regional und ohne Schnörkel.</p>
+          <p class="hero__tagline">bayerisch · modern · regional</p>
+          <p class="hero__claim">Genuss aus dem Wald — ehrlich zubereitet, regional eingekauft, heute auf den Teller gebracht.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="speisekarte.html">Speisekarte ansehen</a>
             <a class="btn btn--ghost" href="#reservierung">Tisch reservieren</a>
@@ -50,33 +51,34 @@
         </div>
         <div class="hero__visual" role="img" aria-label="Stimmungsbild: Lokal, Wald und Genuss">
           <img class="hero__visual-img" src="img/web/hero.webp" alt="" width="1600" height="1067" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 50vw" onerror="this.style.display='none'">
-          <p class="hero__visual-caption">Woid Moments – Genuss, Wald &amp; Gastlichkeit.</p>
+          <p class="hero__visual-caption">Woid Moments — wo Wald, Genuss und Gastlichkeit zusammenfinden.</p>
         </div>
       </div>
     </section>
 
     <section id="ueber-uns" class="section" aria-labelledby="about-heading">
       <div class="container about__grid">
-        <div class="about__image" role="img" aria-label="Platzhalter Bild Lokal oder Team"></div>
+        <div class="about__image" role="img" aria-label="Platzhalter: Innenraum oder Team"></div>
         <div class="about__content">
           <h2 id="about-heading" class="section__title">Über uns</h2>
-          <p class="about__subtitle">Aus dem Woid. Für dahoam.</p>
+          <p class="about__subtitle">Aus dem Woid — für dahoam.</p>
           <p class="about__text">
-            Ehrliche Küche, regionale Zutaten und eine moderne Interpretation traditioneller Gerichte –
-            das ist Woid‘Kich. Wir kochen, was die Landschaft hergibt, mit Respekt vor Handwerk und Jahreszeit.
+            Bei uns trifft Handwerk auf Jahreszeit: regionale Zutaten, klarer Geschmack und eine moderne Lesart
+            bayerischer Küche. Was der Wald und die Felder hergeben, landet respektvoll auf dem Teller — ohne
+            Chichi, dafür mit Herzblut hinter dem Herd.
           </p>
           <div class="values" role="list">
             <div class="value-card" role="listitem">
               <strong>Regional</strong>
-              <span>Was nah ist, schmeckt am besten.</span>
+              <span>Kurze Wege, volle Aromen — von Erzeugern, die wir kennen.</span>
             </div>
             <div class="value-card" role="listitem">
               <strong>Ehrlich</strong>
-              <span>Klar auf dem Teller, ohne Schnickschnack.</span>
+              <span>Was draufsteht, ist drin: klar, saisonal, nachvollziehbar.</span>
             </div>
             <div class="value-card" role="listitem">
-              <strong>Gmütlich</strong>
-              <span>Wie bei Freunden – nur mit besserem Bier.</span>
+              <strong>Gastlich</strong>
+              <span>Wie bei guten Freunden: warm, ungezwungen, mit Bier vom Fass.</span>
             </div>
           </div>
         </div>
@@ -86,7 +88,7 @@
     <section id="speisekarte" class="section section--muted" aria-labelledby="kitchen-heading">
       <div class="container">
         <h2 id="kitchen-heading" class="section__title">Unsere Küche</h2>
-        <p class="section__lead">Kreativ. Regional. Guad.</p>
+        <p class="section__lead">Saisonal gedacht, bodenständig gekocht — mit dem Anspruch, den wir selbst an einen Abend auswärts hätten.</p>
         <div class="menu-preview__grid">
           <article class="card-dish card-dish--featured">
             <div class="card-dish__img">
@@ -94,7 +96,7 @@
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Woid‑Burger</h3>
-              <p class="card-dish__desc">Mit regionalem Rindfleisch.</p>
+              <p class="card-dish__desc">Saftiges Rind aus der Region, gereiftes Brioche, knackiges Gemüse.</p>
               <p class="card-dish__price"><span class="price">16,90&nbsp;€</span></p>
             </div>
           </article>
@@ -104,7 +106,7 @@
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Rahmschwammerl</h3>
-              <p class="card-dish__desc">Mit Semmelknödel.</p>
+              <p class="card-dish__desc">Waldpilze in feiner Rahmsoße, dazu lockerer Semmelknödel.</p>
               <p class="card-dish__price"><span class="price">14,50&nbsp;€</span></p>
             </div>
           </article>
@@ -114,7 +116,7 @@
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Zwiebelrostbraten</h3>
-              <p class="card-dish__desc">Saftig, mit Röstzwiebeln.</p>
+              <p class="card-dish__desc">Zartes Rind, goldene Röstzwiebeln, kräftige Soße.</p>
               <p class="card-dish__price"><span class="price">21,90&nbsp;€</span></p>
             </div>
           </article>
@@ -124,7 +126,7 @@
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Kürbis‑Risotto</h3>
-              <p class="card-dish__desc">Vegetarisch, mit Kürbiskernöl und Parmesan.</p>
+              <p class="card-dish__desc">Cremiges Risotto, steirisches Kernöl, gereifter Parmesan.</p>
               <p class="card-dish__price"><span class="price">14,50&nbsp;€</span></p>
             </div>
           </article>
@@ -134,7 +136,7 @@
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Brotzeitbrettl „Regional“</h3>
-              <p class="card-dish__desc">Wurst, Käs, Honig &amp; Obatzda vom Partnerbetrieb.</p>
+              <p class="card-dish__desc">Auswahl an Wurst und Käse, Honig und Obatzda von Partnern aus der Umgebung.</p>
               <p class="card-dish__price"><span class="price">16,00&nbsp;€</span></p>
             </div>
           </article>
@@ -144,7 +146,7 @@
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Schwarzwälder von daheim</h3>
-              <p class="card-dish__desc">Hausgemacht, nicht zu süß – wie’s sich gehört.</p>
+              <p class="card-dish__desc">Hausgemacht, ausgewogen süß — wie beim Konditor um die Ecke, nur bei uns.</p>
               <p class="card-dish__price"><span class="price">7,50&nbsp;€</span></p>
             </div>
           </article>
@@ -159,7 +161,8 @@
       <div class="container">
         <h2 id="getraenke-heading" class="section__title">Getränke</h2>
         <p class="section__lead">
-          Aus der Region: Helles und Dunkles vom Fass, offene Weine und Erfrischungen – alles in der Übersicht.
+          Vom Fass ins Glas: unsere Hausbrauerei-Partner liefern Helles und Dunkles, dazu ausgewählte offene Weine
+          und Erfrischungen — abgestimmt auf unsere Küche.
         </p>
         <div class="getraenke-strip" role="group" aria-label="Getränke in Bildern">
           <figure class="getraenke-strip__item">
@@ -179,13 +182,36 @@
     <section id="partner" class="section" aria-labelledby="partner-heading">
       <div class="container">
         <h2 id="partner-heading" class="section__title">Unsere Partner aus der Region</h2>
-        <p class="section__lead">Qualität entsteht gemeinsam – mit Betrieben aus der Nachbarschaft.</p>
+        <p class="section__lead">Gute Produkte haben Heimat — wir arbeiten mit ausgewählten Betrieben aus der Region, deren Qualität wir persönlich schätzen.</p>
         <div class="partner-grid">
-          <div class="partner-item">Brauerei <small>Logo / Name Platzhalter</small></div>
-          <div class="partner-item">Bäckerei <small>Logo / Name Platzhalter</small></div>
-          <div class="partner-item">Metzgerei <small>Logo / Name Platzhalter</small></div>
-          <div class="partner-item">Gemüsehändler <small>Logo / Name Platzhalter</small></div>
-          <div class="partner-item">Bauernhof <small>Logo / Name Platzhalter</small></div>
+          <div class="partner-item">Brauerei <small>Name &amp; Logo folgen</small></div>
+          <div class="partner-item">Bäckerei <small>Name &amp; Logo folgen</small></div>
+          <div class="partner-item">Metzgerei <small>Name &amp; Logo folgen</small></div>
+          <div class="partner-item">Gemüse &amp; Obst <small>Name &amp; Logo folgen</small></div>
+          <div class="partner-item">Bauernhof <small>Name &amp; Logo folgen</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catering" class="section catering" aria-labelledby="catering-heading">
+      <div class="container catering__grid">
+        <div class="catering__visual" role="img" aria-label="Platzhalter: festlich gedeckter Tisch oder Buffet"></div>
+        <div class="catering__content">
+          <h2 id="catering-heading" class="section__title">Catering &amp; besondere Anlässe</h2>
+          <p class="section__lead">
+            Vom intimen Dinner bis zur größeren Feier: Wir planen mit euch Menü, Ablauf und Getränke — damit ihr
+            euch auf eure Gäste konzentrieren könnt.
+          </p>
+          <p class="catering__intro">Woid‘Kich begleitet euch unter anderem bei:</p>
+          <ul class="catering__list">
+            <li>Geburtstagen</li>
+            <li>Firmenfeiern</li>
+            <li>Hochzeiten</li>
+            <li>Vereinsabenden</li>
+            <li>privaten Events</li>
+          </ul>
+          <p class="catering__note">Unverbindliche Beratung, transparente Angebote — sprecht uns einfach an.</p>
+          <a class="btn btn--primary" href="mailto:hallo@woidkich.de?subject=Anfrage%3A%20Catering%20%26%20Event">Anfrage senden</a>
         </div>
       </div>
     </section>
@@ -193,7 +219,7 @@
     <section id="galerie" class="section section--muted" aria-labelledby="gallery-heading">
       <div class="container">
         <h2 id="gallery-heading" class="section__title">Woid Moments</h2>
-        <p class="section__lead">Eindrücke vom Wald, dem Lokal und kleinen Genussmomenten.</p>
+        <p class="section__lead">Ein paar Eindrücke aus Küche, Keller und Tafel — echte Momente, keine Stockfotos.</p>
         <div class="gallery-strip" role="list">
           <div class="gallery-item" role="listitem">
             <img src="img/web/woid-burger.webp" alt="" width="560" height="560" loading="lazy" decoding="async" onerror="this.style.display='none'">
@@ -262,7 +288,7 @@
         </div>
         <div>
           <div class="map-placeholder" role="img" aria-label="Karten-Platzhalter">
-            Karte: später Google Maps oder OpenStreetMap einbinden
+            Karte folgt — z. B. Google Maps oder OpenStreetMap.
           </div>
         </div>
       </div>
@@ -271,7 +297,7 @@
     <section id="reservierung" class="section section--muted" aria-labelledby="reserve-heading">
       <div class="container">
         <h2 id="reserve-heading" class="section__title">Tisch reservieren</h2>
-        <p class="section__lead">Schick uns deine Anfrage – wir melden uns so bald wie möglich.</p>
+        <p class="section__lead">Reserviert euren Tisch mit wenigen Angaben — wir bestätigen zeitnah persönlich.</p>
         <div class="form-card">
           <div id="reserve-message" class="form-message" role="status" aria-live="polite" tabindex="-1" hidden></div>
           <form id="reservation-form" class="form-grid" novalidate>
@@ -327,7 +353,7 @@
               <button type="submit" class="btn btn--primary">Anfrage senden</button>
             </div>
           </form>
-          <p class="form-hint">*Demo – kann später mit E-Mail oder WhatsApp verbunden werden</p>
+          <p class="form-hint">Hinweis: Dieses Formular ist eine Demo und kann später an E‑Mail, WhatsApp oder euer Reservierungssystem angebunden werden.</p>
         </div>
       </div>
     </section>
@@ -345,6 +371,7 @@
           <li><a href="#ueber-uns">Über uns</a></li>
           <li><a href="#speisekarte">Speisekarte</a></li>
           <li><a href="#getraenke">Getränke</a></li>
+          <li><a href="#catering">Catering</a></li>
           <li><a href="#galerie">Galerie</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="#reservierung">Reservierung</a></li>

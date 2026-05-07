@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 108" fill="none" aria-hidden="true">
-  <g stroke="#1f3d2b" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" opacity="1">
-    <!-- fünf schlanke Tannen, nur Kontur  für dezente Hintergrund-Nutzung -->
-    <path d="M32 98V58M32 58L10 78L32 42L54 78L32 58M32 50L16 66L32 34L48 66L32 50"/>
-    <path d="M92 98V64M92 64L74 80L92 48L110 80L92 64M92 54L80 68L92 40L104 68L92 54"/>
-    <path d="M152 98V52M152 52L128 76L152 36L176 76L152 52M152 44L134 64L152 30L170 64L152 44"/>
-    <path d="M218 98V60M218 60L198 78L218 44L238 78L218 60M218 52L204 68L218 38L232 68L218 52"/>
-    <path d="M288 98V56M288 56L266 76L288 40L310 76L288 56M288 48L272 64L288 34L304 64L288 48"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 114" fill="none" aria-hidden="true">
+  <g stroke="#1f3d2b" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 101 H390" stroke-width="1" opacity="0.28"/>
+    <g stroke-width="1.15" opacity="0.92">
+      <path d="M36 100V60M36 60L14 78L36 44L58 78L36 60M36 50L20 66L36 34L52 66L36 50"/>
+      <path d="M98 100V64M98 64L78 80L98 48L118 80L98 64M98 54L84 68L98 40L112 68L98 54"/>
+      <path d="M162 100V53M162 53L136 77L162 33L188 77L162 53M162 43L142 63L162 29L182 63L162 43"/>
+      <path d="M228 100V58M228 58L206 78L228 42L250 78L228 58M228 49L214 65L228 35L242 65L228 49"/>
+      <path d="M298 100V55M298 55L276 76L298 37L320 76L298 55M298 46L282 62L298 32L314 62L298 46"/>
+    </g>
   </g>
 </svg>

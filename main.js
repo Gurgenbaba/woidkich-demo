@@ -35,6 +35,12 @@
         }
       });
     });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        setNavOpen(false);
+      }
+    });
   }
 
   var form = document.getElementById("reservation-form");
