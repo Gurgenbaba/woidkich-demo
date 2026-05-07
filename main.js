@@ -1,6 +1,43 @@
 (function () {
   "use strict";
 
+  /**
+   * Fehlende img/web-Assets: optional data-fallback-src, sonst dezente .media-missing-Fläche
+   * bzw. Galerie/Getränke-Kacheln ausblenden (keine grellen Gradient-Flächen).
+   */
+  function markMediaMissing(img) {
+    var wrap = img.closest(
+      ".card-dish__img, .gallery-item, .getraenke-strip__item, .catering__visual, .hero__visual, .menu-row__thumb"
+    );
+    if (wrap) {
+      wrap.classList.add("media-missing");
+    }
+  }
+
+  function wireWebImages() {
+    document.querySelectorAll('img[src*="img/web"]').forEach(function (img) {
+      img.addEventListener(
+        "error",
+        function onFail() {
+          var fb = img.getAttribute("data-fallback-src");
+          if (fb && img.dataset.fallbackTried !== "1") {
+            img.dataset.fallbackTried = "1";
+            img.src = fb;
+            return;
+          }
+          markMediaMissing(img);
+        },
+        { once: true }
+      );
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", wireWebImages);
+  } else {
+    wireWebImages();
+  }
+
   document.querySelectorAll(".logo-img").forEach(function (img) {
     var wrap = img.closest(".logo-link");
     var fb = wrap && wrap.querySelector(".logo-fallback");
