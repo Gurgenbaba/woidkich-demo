@@ -8,24 +8,24 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/web/schweinsbraten-woid-art.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page--home">
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-header">
+  <header class="site-header site-header--home">
     <div class="container header-inner">
-      <a class="logo-link" href="#start" aria-label="Woid‘Kich — Zur Startseite">
+      <a class="logo-link logo-link--badge" href="#start" aria-label="Woid‘Kich — Zur Startseite">
         <img src="logo.png" alt="" class="logo-img" width="480" height="148" decoding="async">
         <span class="logo-fallback" hidden>Woid‘Kich</span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Menü öffnen">
         <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
-      <nav id="main-navigation" class="main-nav" aria-label="Hauptnavigation">
-        <a href="#start">Start</a>
+      <nav id="main-navigation" class="main-nav main-nav--caps" aria-label="Hauptnavigation">
+        <a href="#start" class="is-active" aria-current="page">Start</a>
         <a href="#ueber-uns">Über uns</a>
         <a href="#speisekarte">Speisekarte</a>
         <a href="#getraenke">Getränke</a>
@@ -34,55 +34,120 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn--primary" href="#reservierung">Tisch reservieren</a>
+        <a class="btn btn--reserve-header" href="#reservierung">
+          <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/></svg>
+          Tisch reservieren
+        </a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section id="start" class="hero" aria-labelledby="hero-heading">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <h1 id="hero-heading" class="hero__eyebrow">Woid‘Kich</h1>
-          <p class="hero__tagline">bayerisch · modern · regional</p>
-          <p class="hero__claim">Genuss aus dem Wald — ehrlich zubereitet, regional eingekauft, heute auf den Teller gebracht.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="speisekarte.html">Speisekarte ansehen</a>
-            <a class="btn btn--ghost" href="#reservierung">Tisch reservieren</a>
+    <section id="start" class="hero hero--cinema" aria-labelledby="hero-heading">
+      <div class="hero__forest" aria-hidden="true"></div>
+      <div class="container hero__grid hero__grid--cinema">
+        <div class="hero__content hero__content--cinema">
+          <p class="hero__script">Aus dem Woid – für dahoam. <span class="hero__heart" aria-hidden="true">♥</span></p>
+          <h1 class="hero__display" id="hero-heading">
+            <span class="hero__display-line">Ehrlicher Genuss.</span>
+            <span class="hero__display-line hero__display-line--gold">Echter Woid.</span>
+          </h1>
+          <p class="hero__lead">
+            Regional eingekauft, ehrlich zubereitet, heute auf den Teller gebracht — mit Herzblut hinter dem Herd und dem Anspruch,
+            den wir selbst an einen Abend auswärts hätten.
+          </p>
+          <div class="hero__actions hero__actions--cinema">
+            <a class="btn btn--primary btn--cinema-solid" href="speisekarte.html">
+              <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M8 3v3M16 3v3M4 10h16M6 10v9a2 2 0 002 2h8a2 2 0 002-2v-9"/><path d="M9 14h6"/></svg>
+              Speisekarte ansehen
+            </a>
+            <a class="btn btn--cinema-outline" href="#reservierung">
+              <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 11h16"/></svg>
+              Tisch reservieren
+            </a>
           </div>
+          <ul class="hero__pillrow" aria-label="Werte">
+            <li class="hero__pill">
+              <span class="hero__pill-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2 4 4 .5-3 3 1 4.5L12 16l-4 1.5 1-4.5-3-3 4-.5z"/></svg>
+              </span>
+              <span class="hero__pill-label">Regional</span>
+              <span class="hero__pill-sub">Kurze Wege</span>
+            </li>
+            <li class="hero__pill">
+              <span class="hero__pill-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c4-3 8-6 8-11a8 8 0 10-16 0c0 5 4 8 8 11z"/><path d="M12 11l1.5-1.5"/></svg>
+              </span>
+              <span class="hero__pill-label">Frisch</span>
+              <span class="hero__pill-sub">Saisonal</span>
+            </li>
+            <li class="hero__pill">
+              <span class="hero__pill-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8L12 21l8.8-8.8a5.5 5.5 0 000-7.8z"/></svg>
+              </span>
+              <span class="hero__pill-label">Mit Herz</span>
+              <span class="hero__pill-sub">Gastlichkeit</span>
+            </li>
+            <li class="hero__pill">
+              <span class="hero__pill-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 10h8v8a2 2 0 01-2 2h-4a2 2 0 01-2-2v-8zM10 6a2 2 0 114 0v4H10V6z"/></svg>
+              </span>
+              <span class="hero__pill-label">Bayerisch</span>
+              <span class="hero__pill-sub">Modern</span>
+            </li>
+          </ul>
         </div>
-        <div class="hero__visual" role="img" aria-label="Stimmungsbild: Lokal, Wald und Genuss">
-          <img class="hero__visual-img" src="img/web/schweinsbraten-woid-art.webp" alt="" width="900" height="600" decoding="async" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 100vw, 50vw">
-          <p class="hero__visual-caption">Woid Moments — wo Wald, Genuss und Gastlichkeit zusammenfinden.</p>
+        <div class="hero__visual hero__visual--cinema" role="img" aria-label="Schweinsbraten vom Teller — Stimmungsbild Küche">
+          <img class="hero__visual-img" src="img/web/schweinsbraten-woid-art.webp" alt="" width="900" height="600" decoding="async" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 100vw, 46vw">
         </div>
+      </div>
+      <div class="hero__edge" aria-hidden="true">
+        <svg class="hero__edge-svg" viewBox="0 0 1440 56" preserveAspectRatio="none" focusable="false">
+          <path fill="currentColor" d="M0,56 L0,18 C240,42 480,6 720,22 C960,38 1200,10 1440,26 L1440,56 Z"/>
+        </svg>
       </div>
     </section>
 
-    <section id="ueber-uns" class="section" aria-labelledby="about-heading">
-      <div class="container about__grid">
-        <div class="about__image" role="img" aria-label="Platzhalter: Innenraum oder Team"></div>
-        <div class="about__content">
-          <h2 id="about-heading" class="section__title">Über uns</h2>
-          <p class="about__subtitle">Aus dem Woid — für dahoam.</p>
-          <p class="about__text">
-            Bei uns trifft Handwerk auf Jahreszeit: regionale Zutaten, klarer Geschmack und eine moderne Lesart
-            bayerischer Küche. Was der Wald und die Felder hergeben, landet respektvoll auf dem Teller — ohne
-            Chichi, dafür mit Herzblut hinter dem Herd.
+    <section id="ueber-uns" class="welcome" aria-labelledby="welcome-heading">
+      <div class="container welcome__grid">
+        <div class="welcome__copy">
+          <p class="welcome__kicker">Willkommen bei Woid‘Kich</p>
+          <h2 id="welcome-heading" class="welcome__title">Mehr als nur ein Wirtshaus.</h2>
+          <p class="welcome__text">
+            Wir glauben an ehrlichen Genuss: Zutaten mit Heimat, Handwerk am Herd und ein Ambiente, in dem ihr durchatmen könnt.
+            Ob schneller Teller nach der Tour oder ein langer Abend mit Freunden – wir kochen, was wir selbst gerne essen würden.
           </p>
-          <div class="values" role="list">
-            <div class="value-card" role="listitem">
-              <strong>Regional</strong>
-              <span>Kurze Wege, volle Aromen — von Erzeugern, die wir kennen.</span>
+          <p class="welcome__text">
+            Dazu passt Bier vom Fass, offene Weine und ein Team, das euch gern sieht. Kommt vorbei – der Wald ist nicht weit,
+            und der Tisch ist schon fast gedeckt.
+          </p>
+        </div>
+        <div class="welcome__pillars">
+          <article class="pillar-card">
+            <div class="pillar-card__visual pillar-card__visual--forest" role="img" aria-label="Waldstimmung"></div>
+            <div class="pillar-card__bar">
+              <h3 class="pillar-card__title">Aus dem Woid</h3>
+              <p class="pillar-card__tagline">Natur als Inspiration</p>
             </div>
-            <div class="value-card" role="listitem">
-              <strong>Ehrlich</strong>
-              <span>Was draufsteht, ist drin: klar, saisonal, nachvollziehbar.</span>
+          </article>
+          <article class="pillar-card">
+            <div class="pillar-card__visual">
+              <img src="img/web/zwiebelrostbraten.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
             </div>
-            <div class="value-card" role="listitem">
-              <strong>Gastlich</strong>
-              <span>Wie bei guten Freunden: warm, ungezwungen, mit Bier vom Fass.</span>
+            <div class="pillar-card__bar">
+              <h3 class="pillar-card__title">Handgemacht</h3>
+              <p class="pillar-card__tagline">Am Herd verwurzelt</p>
             </div>
-          </div>
+          </article>
+          <article class="pillar-card">
+            <div class="pillar-card__visual">
+              <img src="img/web/brotzeitbrettl-regional.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="pillar-card__bar">
+              <h3 class="pillar-card__title">Gastlichkeit</h3>
+              <p class="pillar-card__tagline">Wie bei Freunden</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
