@@ -21,8 +21,8 @@
   --shadow-lift: 0 14px 40px rgba(31, 61, 43, 0.14);
   --shadow-btn: 0 6px 20px rgba(31, 61, 43, 0.28);
   --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
-  /* Traditionelle Fraktur — wirkt bayrisch/authentisch; nur für Überschriften */
-  --font-fraktur: "UnifrakturMaguntia", "Old English Text MT", "Times New Roman", serif;
+  /* Überschriften: gleiche Sans-Serif, kräftig — klar lesbar, nicht verschnörkelt */
+  --font-heading: var(--font-sans);
   --space-section: clamp(3rem, 8vw, 5.5rem);
   --max-content: 72rem;
 }
@@ -189,8 +189,8 @@ a:hover {
 }
 
 .logo-fallback {
-  font-family: var(--font-fraktur);
-  font-weight: 400;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: clamp(1.5rem, 4vw, 2rem);
   letter-spacing: 0.02em;
   color: var(--color-brand);
@@ -436,6 +436,19 @@ a:hover {
   z-index: 0;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  left: max(-1rem, -2vw);
+  bottom: 0;
+  width: min(72vw, 440px);
+  height: clamp(100px, 22vw, 168px);
+  background: url("img/trees-hero.svg") no-repeat left bottom / contain;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero__grid {
   position: relative;
   z-index: 1;
@@ -463,14 +476,14 @@ a:hover {
 }
 
 .hero__eyebrow {
-  font-family: var(--font-fraktur);
+  font-family: var(--font-heading);
   font-size: clamp(2.5rem, 6.5vw, 3.85rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.1;
   color: var(--color-brand);
   margin: 0 0 0.35rem;
-  letter-spacing: 0.01em;
-  text-shadow: 0 2px 28px rgba(198, 161, 54, 0.35);
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 18px rgba(198, 161, 54, 0.22);
 }
 
 .hero__tagline {
@@ -564,6 +577,12 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .hero::after {
+    width: min(88vw, 360px);
+    height: clamp(88px, 26vw, 140px);
+    opacity: 0.16;
+  }
+
   .hero__grid {
     grid-template-columns: 1fr;
   }
@@ -585,9 +604,9 @@ a:hover {
 }
 
 .section__title {
-  font-family: var(--font-fraktur);
+  font-family: var(--font-heading);
   font-size: clamp(1.85rem, 3.8vw, 2.35rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--color-brand);
   margin: 0 0 0.35rem;
@@ -633,9 +652,9 @@ a:hover {
 }
 
 .about__subtitle {
-  font-family: var(--font-fraktur);
+  font-family: var(--font-heading);
   font-size: clamp(1.35rem, 2.8vw, 1.85rem);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25;
   color: var(--color-brand);
   margin: 0 0 1rem;
@@ -1233,8 +1252,8 @@ a:hover {
 }
 
 .footer-brand {
-  font-family: var(--font-fraktur);
-  font-weight: 400;
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 1.35rem;
   line-height: 1.2;
   margin: 0 0 0.5rem;
@@ -1283,9 +1302,9 @@ a:hover {
 }
 
 .legal-section h2 {
-  font-family: var(--font-fraktur);
+  font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--color-brand);
 }
@@ -1297,6 +1316,8 @@ a:hover {
 
 /* ——— Speisekarte page ——— */
 .page-hero {
+  position: relative;
+  overflow: hidden;
   padding: clamp(2rem, 5vw, 3rem) 0;
   background:
     radial-gradient(ellipse 70% 90% at 100% 20%, rgba(198, 161, 54, 0.18), transparent 55%),
@@ -1304,11 +1325,29 @@ a:hover {
   border-bottom: 2px solid rgba(198, 161, 54, 0.35);
 }
 
+.page-hero::after {
+  content: "";
+  position: absolute;
+  left: max(-0.5rem, -1vw);
+  bottom: 0;
+  width: min(58vw, 320px);
+  height: clamp(72px, 16vw, 120px);
+  background: url("img/trees-hero.svg") no-repeat left bottom / contain;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 .page-hero h1 {
-  font-family: var(--font-fraktur);
+  font-family: var(--font-heading);
   margin: 0 0 0.5rem;
   font-size: clamp(2rem, 4.5vw, 2.65rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.15;
   color: var(--color-brand);
 }
@@ -1353,9 +1392,9 @@ a:hover {
 }
 
 .menu-category h2 {
-  font-family: var(--font-fraktur);
+  font-family: var(--font-heading);
   font-size: clamp(1.45rem, 3vw, 1.85rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--color-brand);
   margin: 0 0 1.25rem;

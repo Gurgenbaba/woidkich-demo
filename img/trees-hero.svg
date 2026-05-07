@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 108" fill="none" aria-hidden="true">
+  <g stroke="#1f3d2b" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" opacity="1">
+    <!-- fünf schlanke Tannen, nur Kontur  für dezente Hintergrund-Nutzung -->
+    <path d="M32 98V58M32 58L10 78L32 42L54 78L32 58M32 50L16 66L32 34L48 66L32 50"/>
+    <path d="M92 98V64M92 64L74 80L92 48L110 80L92 64M92 54L80 68L92 40L104 68L92 54"/>
+    <path d="M152 98V52M152 52L128 76L152 36L176 76L152 52M152 44L134 64L152 30L170 64L152 44"/>
+    <path d="M218 98V60M218 60L198 78L218 44L238 78L218 60M218 52L204 68L218 38L232 68L218 52"/>
+    <path d="M288 98V56M288 56L266 76L288 40L310 76L288 56M288 48L272 64L288 34L304 64L288 48"/>
+  </g>
+</svg>
