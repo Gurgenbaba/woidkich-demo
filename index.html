@@ -315,8 +315,28 @@
           <div class="contact-card__woods" aria-hidden="true"></div>
         </article>
         <div class="contact-layout__below">
-          <div class="map-placeholder" role="img" aria-label="Karten-Platzhalter">
-            Karte folgt — z. B. Google Maps oder OpenStreetMap.
+          <!-- Karte: bbox & marker in der iframe-URL anpassen (openstreetmap.org → Teilen → „HTML“). -->
+          <div class="map-card">
+            <div class="map-card__frame">
+              <iframe
+                class="map-card__embed"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=13.2920%2C48.9855%2C13.3100%2C48.9938&amp;layer=mapnik&amp;marker=48.9896233%2C13.3009875"
+                title="Karte: Woid‘Kich in Frauenau"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                width="600"
+                height="320"
+              ></iframe>
+              <p class="map-card__fallback" role="status" aria-live="polite">
+                Karte konnte nicht geladen werden. Adresse: Waldstraße 12, 94256 Frauenau.
+              </p>
+            </div>
+            <a
+              class="map-card__link"
+              href="https://www.openstreetmap.org/search?query=Waldstra%C3%9Fe%2012%2C%2094256%20Frauenau%2C%20Deutschland"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Route planen</a>
           </div>
           <p class="contact-layout__cta">
             <a class="btn btn--primary" href="#reservierung">Tisch reservieren</a>

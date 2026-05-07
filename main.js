@@ -46,6 +46,30 @@
     });
   }
 
+  function wireMapEmbed() {
+    var card = document.querySelector(".map-card");
+    var iframe = document.querySelector(".map-card__frame iframe.map-card__embed");
+    if (!card || !iframe) return;
+    var failTimer = window.setTimeout(function () {
+      if (!card.classList.contains("map-card--iframe-loaded")) {
+        card.classList.add("map-card--show-fallback");
+      }
+    }, 12000);
+    function markLoaded() {
+      window.clearTimeout(failTimer);
+      card.classList.add("map-card--iframe-loaded");
+    }
+    iframe.addEventListener("load", markLoaded, { once: true });
+    iframe.addEventListener(
+      "error",
+      function () {
+        card.classList.add("map-card--show-fallback");
+        markLoaded();
+      },
+      { once: true }
+    );
+  }
+
   function wireNav() {
     var navToggle = document.querySelector(".nav-toggle");
     var mainNav = document.querySelector(".main-nav");
@@ -197,6 +221,7 @@
   function init() {
     wireLogo();
     wireWebImages();
+    wireMapEmbed();
     wireNav();
     wireForm();
   }
