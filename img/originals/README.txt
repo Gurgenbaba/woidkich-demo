@@ -1,24 +1,35 @@
-Rohfotos hier ablegen (JPG / PNG / TIFF …) — alternativ dieselben Dateinamen direkt im Ordner „img/“ (oberste Ebene, nicht in „web/“). Große Dateien (z. B. 50 MB) sind für’s Web ungeeignet.
+Menüfotos: Ordnerstruktur img/menu/
+===================================
 
-Kompression (WebP, verkleinert):
-  1. Im Projektordner:  pip install -r requirements-compress.txt
-  2. Dann:            python compress_images.py
+Rohbilder (PNG/JPG …) liegen nach Kategorie unter:
 
-Ausgabe: ../web/<gleicher Dateiname>.webp
+  img/menu/vorspeisen/
+  img/menu/hauptgerichte/
+  img/menu/brotzeit/
+  img/menu/suesses/
+  img/menu/getränke/          (Ordnername mit „ä“ ist ok)
 
-Benennung der Rohdateien (Dateiname ohne Endung = Web-Dateiname):
+Der Dateiname (ohne Endung) wird für die Web-Datei in img/web/ automatisch
+in einen kurzen Slug umgewandelt, z. B.:
 
-  hero.jpg              → web/hero.webp           (Hero rechts, max. lange Kante 1600 px)
-  woid-burger.jpg       → web/woid-burger.webp    (Karten „Unsere Küche“, max. 900 px)
-  rahmschwammerl.jpg
-  zwiebelrostbraten.jpg
-  kuerbis-risotto.jpg   (Umlaut im Namen vermeiden: kuerbis)
-  brotzeitbrettl.jpg
-  schwarzwaelder.jpg
+  Woid‑Burger.png              → img/web/woid-burger.webp
+  Kürbis‑Risotto.png           → img/web/kuerbis-risotto.webp
+  Brotzeitbrettl „Regional“.png → img/web/brotzeitbrettl-regional.webp
+  Obatzda & Radi.png           → img/web/obatzda-und-radi.webp
+  Schwarzwälder.png            → img/web/schwarzwaelder.webp
 
-  gallery-1.jpg … gallery-7.jpg   → Galerie-Streifen (max. 560 px)
-  getraenk-1.jpg … getraenk-3.jpg → Getränke-Bildleiste (Startseite + Speisekarte)
+Zusätzlich (optional):
 
-Weitere Dateien werden ebenfalls komprimiert; die HTML-Seiten erwarten nur die oben genannten Namen.
+  img/originals/hero.jpg        → img/web/hero.webp   (Startseite Hero rechts)
 
-Diese README-Datei wird vom Skript nicht verarbeitet.
+Kompression ausführen (Projektroot):
+
+  pip install -r requirements-compress.txt
+  python compress_images.py
+
+Alle passenden Bilder unter img/menu/** und in img/originals/ werden
+gelesen, verkleinert und nach img/web/*.webp geschrieben (typisch stark
+kleiner als die Rohdateien).
+
+Die Website verlinkt nur noch img/web/*.webp — die großen Originale
+bleiben in img/menu/ bzw. img/originals/ und werden nicht ausgeliefert.
