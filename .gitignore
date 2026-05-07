@@ -1,0 +1,42 @@
+# — Python / lokale Bild-Pipeline (nicht für GitHub Pages) —
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+
+# Skripte zur WebP-Kompression: lokal behalten oder aus Git-Historie holen; nicht deployen
+compress_images.py
+requirements-compress.txt
+
+# — Rohmaterial (große PNG/JPG; nicht auf Pages) —
+img/originals/
+img/menu/
+
+# — Design-Quellen —
+*.psd
+*.xcf
+*.ai
+*.sketch
+
+# — Temporär / Betriebssystem —
+*.tmp
+*.temp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# — Editor / IDE —
+.vscode/
+.idea/
+*.sublime-*
+
+# — Sonstiges —
+*.log
+.env
+.env.*
