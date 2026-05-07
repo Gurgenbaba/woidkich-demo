@@ -2,8 +2,8 @@
   "use strict";
 
   /**
-   * Fehlende img/web-Assets: optional data-fallback-src, sonst dezente .media-missing-Fläche
-   * bzw. Galerie/Getränke-Kacheln ausblenden (keine grellen Gradient-Flächen).
+   * Fehlende img/web-Assets: bei error optional genau eine data-fallback-src (existierende URL),
+   * sonst .media-missing — keine absichtlichen Doppel-404-Ketten im Markup.
    */
   function markMediaMissing(img) {
     var wrap = img.closest(
@@ -20,7 +20,7 @@
         "error",
         function onFail() {
           var fb = img.getAttribute("data-fallback-src");
-          if (fb && img.dataset.fallbackTried !== "1") {
+          if (fb && fb !== img.getAttribute("src") && img.dataset.fallbackTried !== "1") {
             img.dataset.fallbackTried = "1";
             img.src = fb;
             return;
@@ -32,35 +32,33 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", wireWebImages);
-  } else {
-    wireWebImages();
-  }
-
-  document.querySelectorAll(".logo-img").forEach(function (img) {
-    var wrap = img.closest(".logo-link");
-    var fb = wrap && wrap.querySelector(".logo-fallback");
-    img.addEventListener("error", function () {
-      img.setAttribute("hidden", "");
-      img.setAttribute("aria-hidden", "true");
-      if (fb) {
-        fb.removeAttribute("hidden");
-      }
+  function wireLogo() {
+    document.querySelectorAll(".logo-img").forEach(function (img) {
+      var wrap = img.closest(".logo-link");
+      var fb = wrap && wrap.querySelector(".logo-fallback");
+      img.addEventListener("error", function () {
+        img.setAttribute("hidden", "");
+        img.setAttribute("aria-hidden", "true");
+        if (fb) {
+          fb.removeAttribute("hidden");
+        }
+      });
     });
-  });
-
-  var navToggle = document.querySelector(".nav-toggle");
-  var mainNav = document.querySelector(".main-nav");
-
-  function setNavOpen(open) {
-    if (!navToggle || !mainNav) return;
-    mainNav.classList.toggle("is-open", open);
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    navToggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
   }
 
-  if (navToggle && mainNav) {
+  function wireNav() {
+    var navToggle = document.querySelector(".nav-toggle");
+    var mainNav = document.querySelector(".main-nav");
+
+    function setNavOpen(open) {
+      if (!navToggle || !mainNav) return;
+      mainNav.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    }
+
+    if (!navToggle || !mainNav) return;
+
     navToggle.addEventListener("click", function () {
       setNavOpen(!mainNav.classList.contains("is-open"));
     });
@@ -74,64 +72,70 @@
     });
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        setNavOpen(false);
+      if (e.key !== "Escape") return;
+      if (!mainNav.classList.contains("is-open")) return;
+      setNavOpen(false);
+    });
+  }
+
+  function wireForm() {
+    var form = document.getElementById("reservation-form");
+    var messageEl = document.getElementById("reserve-message");
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function showMessage(type, text) {
+      if (!messageEl) return;
+      messageEl.hidden = false;
+      messageEl.textContent = text;
+      messageEl.className = "form-message";
+      messageEl.setAttribute("tabindex", "-1");
+      if (type === "success") {
+        messageEl.classList.add("form-message--success");
+      } else if (type === "error") {
+        messageEl.classList.add("form-message--error");
       }
-    });
-  }
-
-  var form = document.getElementById("reservation-form");
-  var messageEl = document.getElementById("reserve-message");
-
-  function showMessage(type, text) {
-    if (!messageEl) return;
-    messageEl.hidden = false;
-    messageEl.textContent = text;
-    messageEl.className = "form-message";
-    messageEl.setAttribute("tabindex", "-1");
-    if (type === "success") {
-      messageEl.classList.add("form-message--success");
-    } else if (type === "error") {
-      messageEl.classList.add("form-message--error");
-    }
-    try {
-      messageEl.focus({ preventScroll: true });
-    } catch (e) {
-      /* ältere Browser */
-    }
-    messageEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
-
-  function clearFieldErrors() {
-    if (!form) return;
-    form.querySelectorAll(".field.has-error").forEach(function (f) {
-      f.classList.remove("has-error");
-    });
-    form.querySelectorAll("[aria-invalid]").forEach(function (el) {
-      el.removeAttribute("aria-invalid");
-    });
-  }
-
-  function validateField(fieldWrap, input) {
-    if (!fieldWrap || !input) return false;
-    var ok = true;
-    if (input.hasAttribute("required")) {
-      if (input.type === "email") {
-        ok = input.value.trim() !== "" && input.validity.valid;
-      } else if (input.tagName === "SELECT") {
-        ok = input.value !== "";
-      } else {
-        ok = input.value.trim() !== "";
+      try {
+        messageEl.focus({ preventScroll: true });
+      } catch (err) {
+        /* ältere Browser */
       }
+      messageEl.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "nearest",
+      });
     }
-    fieldWrap.classList.toggle("has-error", !ok);
-    if (input.id) {
-      input.setAttribute("aria-invalid", ok ? "false" : "true");
-    }
-    return ok;
-  }
 
-  if (form && messageEl) {
+    function clearFieldErrors() {
+      if (!form) return;
+      form.querySelectorAll(".field.has-error").forEach(function (f) {
+        f.classList.remove("has-error");
+      });
+      form.querySelectorAll("[aria-invalid]").forEach(function (el) {
+        el.removeAttribute("aria-invalid");
+      });
+    }
+
+    function validateField(fieldWrap, input) {
+      if (!fieldWrap || !input) return false;
+      var ok = true;
+      if (input.hasAttribute("required")) {
+        if (input.type === "email") {
+          ok = input.value.trim() !== "" && input.validity.valid;
+        } else if (input.tagName === "SELECT") {
+          ok = input.value !== "";
+        } else {
+          ok = input.value.trim() !== "";
+        }
+      }
+      fieldWrap.classList.toggle("has-error", !ok);
+      if (input.id) {
+        input.setAttribute("aria-invalid", ok ? "false" : "true");
+      }
+      return ok;
+    }
+
+    if (!form || !messageEl) return;
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       clearFieldErrors();
@@ -142,15 +146,14 @@
       var dateInput = document.getElementById("reserve-date");
       var timeInput = document.getElementById("reserve-time");
       var guestsInput = document.getElementById("reserve-guests");
-      var msgInput = document.getElementById("reserve-message-field");
 
       var pairs = [
-        [nameInput.closest(".field"), nameInput],
-        [emailInput.closest(".field"), emailInput],
-        [phoneInput.closest(".field"), phoneInput],
-        [dateInput.closest(".field"), dateInput],
-        [timeInput.closest(".field"), timeInput],
-        [guestsInput.closest(".field"), guestsInput],
+        [nameInput && nameInput.closest(".field"), nameInput],
+        [emailInput && emailInput.closest(".field"), emailInput],
+        [phoneInput && phoneInput.closest(".field"), phoneInput],
+        [dateInput && dateInput.closest(".field"), dateInput],
+        [timeInput && timeInput.closest(".field"), timeInput],
+        [guestsInput && guestsInput.closest(".field"), guestsInput],
       ];
 
       var allOk = true;
@@ -189,5 +192,18 @@
 
       form.reset();
     });
+  }
+
+  function init() {
+    wireLogo();
+    wireWebImages();
+    wireNav();
+    wireForm();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
   }
 })();

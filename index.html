@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Woid‘Kich — bayerisch · modern · regional. Waldstraße 12, 94256 Frauenau. Reservierung &amp; Speisekarte.">
   <title>Woid‘Kich — bayerisch | modern | regional</title>
+  <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/web/schweinsbraten-woid-art.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +18,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo-link" href="#start" aria-label="Woid‘Kich — Zur Startseite">
-        <img src="logo.png" alt="" class="logo-img" width="480" height="148" decoding="async" fetchpriority="high">
+        <img src="logo.png" alt="" class="logo-img" width="480" height="148" decoding="async">
         <span class="logo-fallback" hidden>Woid‘Kich</span>
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Menü öffnen">
@@ -50,7 +52,7 @@
           </div>
         </div>
         <div class="hero__visual" role="img" aria-label="Stimmungsbild: Lokal, Wald und Genuss">
-          <img class="hero__visual-img" src="img/web/hero.webp" alt="" width="1600" height="1067" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, 50vw">
+          <img class="hero__visual-img" src="img/web/schweinsbraten-woid-art.webp" alt="" width="900" height="600" decoding="async" fetchpriority="high" loading="eager" sizes="(max-width: 768px) 100vw, 50vw">
           <p class="hero__visual-caption">Woid Moments — wo Wald, Genuss und Gastlichkeit zusammenfinden.</p>
         </div>
       </div>
@@ -122,7 +124,7 @@
           </article>
           <article class="card-dish">
             <div class="card-dish__img">
-              <img src="img/web/kuerbis-risotto.webp" alt="" width="900" height="563" loading="lazy" decoding="async">
+              <img src="img/web/kurbis-risotto.webp" alt="" width="900" height="563" loading="lazy" decoding="async">
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Kürbis‑Risotto</h3>
@@ -142,7 +144,7 @@
           </article>
           <article class="card-dish">
             <div class="card-dish__img">
-              <img src="img/web/schwarzwaelder.webp" alt="" width="900" height="563" loading="lazy" decoding="async">
+              <img src="img/web/schwarzwalder.webp" alt="" width="900" height="563" loading="lazy" decoding="async">
             </div>
             <div class="card-dish__body">
               <h3 class="card-dish__title">Schwarzwälder von daheim</h3>
@@ -196,7 +198,7 @@
     <section id="catering" class="section catering" aria-labelledby="catering-heading">
       <div class="container catering__grid">
         <div class="catering__visual" role="img" aria-label="Catering &amp; festliche Tafel">
-          <img src="img/web/catering.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
+          <img src="img/web/brotzeitbrettl-regional.webp" alt="" width="900" height="600" loading="lazy" decoding="async">
         </div>
         <div class="catering__content">
           <h2 id="catering-heading" class="section__title">Catering &amp; besondere Anlässe</h2>
@@ -223,25 +225,25 @@
         <p class="section__lead">Ein paar Eindrücke aus Küche, Keller und Tafel — echte Momente, keine Stockfotos.</p>
         <div class="gallery-strip" role="list">
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-1.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/woid-burger.webp">
+            <img src="img/web/woid-burger.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-2.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/rahmschwammerl.webp">
+            <img src="img/web/rahmschwammerl.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-3.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/zwiebelrostbraten.webp">
+            <img src="img/web/zwiebelrostbraten.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-4.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/helles-vom-fass.webp">
+            <img src="img/web/helles-vom-fass.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-5.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/dunkles.webp">
+            <img src="img/web/dunkles.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-6.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/kraeuterforelle-aus-dem-ofen.webp">
+            <img src="img/web/radler.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
           <div class="gallery-item" role="listitem">
-            <img src="img/web/gallery-7.webp" alt="" width="560" height="560" loading="lazy" decoding="async" data-fallback-src="img/web/kaiserschmarrn.webp">
+            <img src="img/web/kaiserschmarrn.webp" alt="" width="560" height="560" loading="lazy" decoding="async">
           </div>
         </div>
         <p class="gallery-cta">
