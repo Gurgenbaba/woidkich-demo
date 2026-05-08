@@ -7,17 +7,20 @@
         {
           "name": "Kürbissuppe mit Kernöl",
           "description": "Samtzart, mit Kernöl und gerösteten Kernen aus der Region.",
-          "price": "6,90 €"
+          "price": "6,90 €",
+          "image": "img/web/kurbissuppe-mit-kernol.webp"
         },
         {
           "name": "Brettljausn klein",
           "description": "Feine Aufschnitte, gereifter Käse, Gurkerl — dazu frische Brezn.",
-          "price": "9,50 €"
+          "price": "9,50 €",
+          "image": "img/web/brettljausn-klein.webp"
         },
         {
           "name": "Rettich-Carpaccio",
           "description": "Fein gehobelt, mit Kräuter-Vinaigrette und gehobeltem Parmesan.",
-          "price": "8,20 €"
+          "price": "8,20 €",
+          "image": "img/web/rettich-carpaccio.webp"
         }
       ]
     },
@@ -128,11 +131,6 @@
       "id": "getraenke",
       "title": "Getränke",
       "intro": "Ob Schankbier vom Fass, ein Glas offener Wein oder eine klare Erfrischung — unsere Auswahl soll zur Küche passen und den Durst stillen, ohne Schnickschnack.",
-      "stripImages": [
-        "img/web/helles-vom-fass.webp",
-        "img/web/dunkles.webp",
-        "img/web/radler.webp"
-      ],
       "items": [
         {
           "name": "Helles vom Fass",

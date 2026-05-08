@@ -125,34 +125,48 @@
     }
   }
 
-  function buildMenuCard(item, ctx) {
-    ctx = ctx || {};
-    var compactDrinks = ctx.compactDrinks === true;
+  function createMenuMediaPlaceholderSvg() {
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("width", "40");
+    svg.setAttribute("height", "40");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("fill", "none");
+    svg.setAttribute("aria-hidden", "true");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-width", "1.35");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    path.setAttribute("d", "M12 3v18M8 7h8M7 21h10");
+    svg.appendChild(path);
+    svg.style.color = "rgba(31, 61, 43, 0.35)";
+    return svg;
+  }
 
+  function buildMenuCard(item) {
     var article = document.createElement("article");
     article.className = "menu-card";
     if (item.featured === true) article.classList.add("menu-card--featured");
 
+    var media = document.createElement("div");
+    media.className = "menu-card__media";
+
     var imgPath = item.image && String(item.image).trim();
-    if (compactDrinks) {
-      article.classList.add("menu-card--drink");
-      article.classList.add("menu-card--no-media");
-    } else if (imgPath) {
-      article.classList.add("menu-card--has-media");
-      var media = document.createElement("div");
-      media.className = "menu-card__media";
+    if (imgPath) {
       var img = document.createElement("img");
       img.src = imgPath;
       img.alt = "";
-      img.width = 560;
-      img.height = 560;
+      img.width = 400;
+      img.height = 320;
       img.loading = "lazy";
       img.decoding = "async";
       media.appendChild(img);
-      article.appendChild(media);
     } else {
-      article.classList.add("menu-card--no-media");
+      media.classList.add("menu-card__media--placeholder");
+      media.setAttribute("aria-hidden", "true");
+      media.appendChild(createMenuMediaPlaceholderSvg());
     }
+    article.appendChild(media);
 
     var body = document.createElement("div");
     body.className = "menu-card__body";
@@ -210,7 +224,7 @@
     sec.className = "menu-category";
 
     var inner = document.createElement("div");
-    inner.className = "container";
+    inner.className = "container menu-category__inner";
 
     var head = document.createElement("header");
     head.className = "menu-category__head";
@@ -236,34 +250,11 @@
 
     inner.appendChild(head);
 
-    var hasStrip = Array.isArray(cat.stripImages) && cat.stripImages.length > 0;
-    if (hasStrip) {
-      var strip = document.createElement("div");
-      strip.className = "menu-drink-strip";
-      strip.setAttribute("role", "group");
-      strip.setAttribute("aria-label", "Getränke in Bildern");
-      cat.stripImages.forEach(function (src) {
-        if (!src || String(src).trim() === "") return;
-        var cell = document.createElement("div");
-        cell.className = "menu-drink-strip__item";
-        var img = document.createElement("img");
-        img.src = String(src).trim();
-        img.alt = "";
-        img.width = 560;
-        img.height = 560;
-        img.loading = "lazy";
-        img.decoding = "async";
-        cell.appendChild(img);
-        strip.appendChild(cell);
-      });
-      inner.appendChild(strip);
-    }
-
     var itemsWrap = document.createElement("div");
     itemsWrap.className = "menu-items menu-items--premium";
     if (Array.isArray(cat.items)) {
       cat.items.forEach(function (item) {
-        itemsWrap.appendChild(buildMenuCard(item, { compactDrinks: hasStrip }));
+        itemsWrap.appendChild(buildMenuCard(item));
       });
     }
     inner.appendChild(itemsWrap);
