@@ -904,7 +904,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(0.75rem, 2vw, 1.15rem);
-  margin: 1.25rem 0 1.75rem;
+  margin: 1.1rem 0 0;
   max-width: 44rem;
 }
 
@@ -959,12 +959,20 @@ a:hover {
   margin-top: 1.35rem;
 }
 
-.getraenke-teaser.section,
+.getraenke-teaser.section {
+  padding-top: calc(var(--space-section) * 0.82);
+  padding-bottom: calc(var(--space-section) * 0.72);
+}
+
 .catering.section,
 #partner.section,
 #galerie.section {
   padding-top: calc(var(--space-section) * 0.88);
   padding-bottom: calc(var(--space-section) * 0.88);
+}
+
+.getraenke-teaser .section__lead {
+  margin-bottom: 1.05rem;
 }
 
 /* ——— Partner ——— */
